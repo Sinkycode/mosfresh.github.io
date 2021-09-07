@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="file:///C:/Users/sinkyfresh/Documents/Projects/font-awesome/fontawesome-free-5.15.1-web/css/all.css">
+
+   <!-- font-awesome online -->
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <link rel="stylesheet" href="css/style.css">
+
+              <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="banner"></div>
+
+    <div class="container">
+      <div class="box">
+        <div class="box-header">
+          <h1 class="logo">Todo</h1>
+          <img id="moon-icon" src="images/icon-moon.svg"></img>
+          <img id="sun-icon" src="images/icon-sun.svg"></img><!--this svg will be hidden-->
+        </div>
+
+        <div class="bro box1">
+          <label for="check">
+            <div id="circle"></div>
+          </label>  
+          <input type="search" id="search-box" placeholder="Create a new todo...">
+        </div>
+
+        <ul class="list">
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>Complete online JavaScript course</p>
+              </label>
+              <span class="delete"><i class="fas fa-times"></i></span>
+            </li>
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>Jog around the park 3x</p>
+                <span class="delete"><i class="fas fa-times"></i></span>
+              </label>
+            </li>
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>Read for 1 hour</p>
+                <span class="delete"><i class="fas fa-times"></i></span>
+              </label>
+            </li>
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>10 minutes meditation</p>
+                <span class="delete"><i class="fas fa-times"></i></span>
+              </label>
+            </li>
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>Pick up groceries</p>
+                <span class="delete"><i class="fas fa-times"></i></span>
+              </label>
+            </li>
+            <li>
+              <label id="complete">
+                <input type="checkbox" name="" id="">
+                <span class="check"><i class="fas fa-check"></i></span>
+                <p>Complete Todo App on Frontend Mentor</p>
+                <span class="delete"><i class="fas fa-times"></i></span>
+              </label>
+            </li>
+            <div class="links">
+              <a href="#">5 items left</a>
+              <ul>
+                <li><a href="#" class="all">All</a></li>
+                <li><a href="#">Active</a></li>
+                <li><a href="#">Completed</a></li>
+              </ul>
+              <a href="#">Clear Completed</a>
+            </div>
+        </ul>  
+                   
+        <div class="responsive-show">
+          <ul>
+            <li><a href="#" class="all">All</a></li>
+            <li><a href="#">Active</a></li>
+            <li><a href="#">Completed</a></li>
+          </ul>
+        </div>
+
+      </div>      
+    </div>
+  </div>
+  
+  <footer>
+    <p> Drag and drop to reorder list</p>
+ </footer>
+
+  <script type="text/javascript">
+// ----------V  A R I A B L E S 
+    const body = document.querySelector("body");
+    const wrapper = document.querySelector("#wrapper");
+    const banner = document.querySelector(".banner");
+    const container = document.querySelector(".container");
+    const moonIcon = document.querySelector("#moon-icon");
+    const sunIcon = document.querySelector("#sun-icon");
+    const box = document.querySelector(".box");
+    const bro = document.querySelector(".bro");
+    const input = document.querySelector("input");
+    const mainList = document.querySelector(".list");
+    const links = document.querySelector(".links");
+    const footer = document.querySelector("footer p");
+
+// ----------D  A R K   M O D E
+    moonIcon.onclick = function(){
+      //body
+      body.style.background = "hsl(235, 21%, 11%)";
+      body.style.transition = "all  300ms ease";
+      body.style.color = "hsl(234, 39%, 85%)";
+      footer.style.color = "hsl(233, 14%, 35%)";
+      links.style.color = "hsl(233, 14%, 35%)";
+
+      banner.style.background = "url('../images/bg-desktop-dark.jpg')";
+      bro.style.background = "hsl(235, 24%, 19%)";
+
+      // Icons
+      moonIcon.style.display = "none";
+      sunIcon.style.display = "block";  
+      //input
+      input.style.color = "hsl(233, 14%, 35%)";
+      // list
+      mainList.style.background = "hsl(235, 24%, 19%)";
+      mainList.style.color = "hsl(234, 39%, 85%)";
+      mainList.style.transition = "all  300ms ease";
+    }
+// ----------L  I G H T  M O D E
+    sunIcon.onclick = function(){
+      body.style.background = "#f6f6f6";
+      body.style.color = "initial";
+      banner.style.background = "url('../images/bg-desktop-light.jpg')";
+      bro.style.background = "white";
+      moonIcon.style.display = "block";
+      sunIcon.style.display = "none";
+      // list
+      mainList.style.background = "white";
+      mainList.style.color = "initial";
+
+    }
+  </script>
+</body>
+</html>

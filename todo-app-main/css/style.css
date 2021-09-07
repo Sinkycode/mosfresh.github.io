@@ -1,0 +1,376 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary colors */
+  --check-background: linear-gradient(130deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;
+  --Bright-Blue: hsl(220, 98%, 61%);
+
+  /* ### Neutral */
+
+    /* ### Light Theme */
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+    /* ### Dark Theme */
+
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+    --border-width: 1px;
+}
+
+body {
+  Font-size: 18px;
+  font-weight: 500;
+  font-family: Josefin Sans;
+  overflow-x: hidden;
+  background: #f6f6f6;
+
+  position: relative;
+}
+
+input {
+  font-family: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  font-size: 1.4em;
+}
+
+#wrapper {
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.banner {
+  height: 17rem;
+  width: 100%;
+  padding-top: 4rem;
+  background: url("../images/bg-desktop-light.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  /* padding-top: 4em; */
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bolder;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px;
+  cursor: pointer;
+  /* background: var(--check-background);
+  -webkit-background-clip: text;
+  color: transparent; */
+}
+
+#moon-icon {
+  cursor: pointer;
+}
+#sun-icon {
+  cursor: pointer;
+  display: none;
+}
+
+.bro {
+  padding: 1rem;
+  border-radius: .25rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.box1 {
+  background: white;
+  margin: 2em 0;
+}
+
+input[type="search"] {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2em;
+  background: inherit;
+}
+
+.list {
+  background: white;
+  border-radius: .25rem;
+  box-shadow: 0px 0px 40px rgba(0,0,0,0.2);
+}
+
+.list li {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.list li #complete {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  position: relative;
+  width: 100%;
+}
+
+#complete input[type="checkbox"] {
+  display: none;
+}
+
+.list li #complete .check {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.list li #complete .check:hover {
+  background: var(--check-background);
+  border: none;
+}
+
+.list li #complete input:checked ~ .check{
+  background: var(--check-background);
+}
+
+.list li #complete .check::before {
+  content: '';
+
+  width: calc(100% - var(--border-width) * 2);
+  height: calc(100% - var(--border-width) * 2);
+
+  background: white;
+
+  position: absolute;
+  top: var(--border-width);
+  left: var(--border-width);
+
+  border-radius: 50%;
+}
+
+.list li #complete input:checked ~ span::before{
+  background: none;
+}
+
+.list li #complete .check i {
+  font-size: .40em;
+  color: white;
+  z-index: 1;
+}
+
+.list li #complete p {
+  margin-left: 1em;
+  font-size: 20px;
+}
+
+.list li #complete input:checked ~ p{
+  text-decoration: line-through;
+  color: gray;
+}
+
+.list li .delete {
+  --padding: 1.2em;
+
+  position: absolute;
+  top: 28%;
+  right: calc(0% + var(--padding));
+  
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.list li .delete i {
+  font-weight: lighter; 
+  color: #747373;
+}
+
+.list li:hover .delete {
+  visibility: visible;
+} 
+
+/* Links */
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: .80em;
+  color: gray;
+}
+
+.links ul {
+  display: flex;
+  margin: 0 1em;
+}
+
+.links ul li {
+  padding: 15px;
+  border: none;
+}
+
+.links ul li a {
+  font-weight: bold;
+}
+
+.links a:hover {
+  color: #333;
+}
+
+.all {
+  background: linear-gradient(130deg,hsl(192, 100%, 59%), hsl(280, 89%, 57%));
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.responsive-show {
+  background: white;
+  border-radius: .25rem;
+  box-shadow: 0px 0px 40px rgba(0,0,0,0.2);
+  margin: 1.3em 0em;
+
+  display: none;
+}
+
+.responsive-show ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.2em 0em;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.responsive-show ul li a{
+  font-size: 1em;
+  font-weight: bold;
+
+  color: #727171;
+  padding: 1em;
+}
+
+.responsive-show a:hover {
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+  margin-top: 20em;
+  width: 100%;
+}
+
+
+/* ==========================================
+     T  A   B   L   E   T       L   A   N   D   S   C   A   P   E
+============================== */
+@media only screen and (max-width:1024px){
+  .box {
+    width: 60%;
+  }
+}
+@media only screen and (max-width:900px) {
+  .box {
+    width: 70%;
+  }
+  .links {
+    padding: 0em 0em;
+  }
+  
+  .links ul {
+    margin: 0 0em;
+  }
+  
+  .links ul li {
+    padding: .80em;
+  }
+}
+/* ==========================================
+   T  A   B   L   E   T      P    O   R   T   R   A   I   T   
+============================== */
+@media only screen and (max-width:768px){
+  .box {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width:720px){
+  .box {
+    width: 80%;
+  }
+}
+
+/* ==========================================
+   P  H   O   N   E      O    N   L  Y
+============================== */
+@media only screen and (max-width:480px){
+  .box {
+    width: 85%;
+  }
+  .links {
+    padding: 1em 20px;
+    justify-content: space-between;
+  }
+  .links ul{
+    display: none;
+  }
+  .responsive-show {
+    display: block;
+  }
+  footer {
+    margin-top: 28em;
+}   
